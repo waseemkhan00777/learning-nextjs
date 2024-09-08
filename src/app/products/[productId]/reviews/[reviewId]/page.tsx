@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import React from "react";
 
 const ProductReview = ({
@@ -8,6 +9,9 @@ const ProductReview = ({
     reviewId: string;
   };
 }) => {
+  if (parseInt(params.reviewId) > 50) {
+    notFound();
+  }
   return (
     <div>
       Product review for {params.productId} is {params.reviewId}
