@@ -12,6 +12,9 @@ const ProductReview = ({
   if (parseInt(params.reviewId) > 50) {
     notFound();
   }
+  if (parseInt(params.reviewId) === 5) {
+    throw new Error("Error loading review...");
+  }
   return (
     <div>
       Product review for {params.productId} is {params.reviewId}
